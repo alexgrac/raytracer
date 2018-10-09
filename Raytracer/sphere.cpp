@@ -15,6 +15,7 @@ bool Sphere::hit(const Ray& r, float t_min, float t_max, HitRecord& rec) const {
 			rec.t = temp1;
 			rec.p = r.pointAtParameter(rec.t);
 			rec.normal = (rec.p - center) / radius;
+			rec.mat = material;
 			return true;
 		}
 		
@@ -22,6 +23,7 @@ bool Sphere::hit(const Ray& r, float t_min, float t_max, HitRecord& rec) const {
 			rec.t = temp2;
 			rec.p = r.pointAtParameter(rec.t);
 			rec.normal = (rec.p - center) / radius;
+			rec.mat = material;
 			return true;
 		}
 	}
