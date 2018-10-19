@@ -4,6 +4,15 @@
 
 namespace rtrax {
 
+	glm::vec3 randomInUnitDisk() {
+		glm::vec3 p;
+		do {
+			p = float(2.0) * glm::vec3(rand01(), rand01(), 0) - glm::vec3(1, 1, 0);
+		} while (glm::dot(p, p) >= 1.0);
+
+		return p;
+	}
+
 	glm::vec3 randomInUnitSphere() {
 		glm::vec3 p;
 		do {

@@ -14,9 +14,9 @@ bool Dielectric::scatter(const Ray& r, const HitRecord& rec, glm::vec3& attenuat
 	if (glm::dot(r.dir, rec.normal) > 0) {
 		outwardNormal = -rec.normal;
 		niOverNt = _refIdx;
-		//cosine = glm::dot(r.dir, rec.normal) / r.dir.length();
-		//cosine = glm::sqrt(1 - _refIdx * _refIdx * (1 - cosine * cosine));
-		cosine = _refIdx * glm::dot(r.dir, rec.normal) / r.dir.length();
+		cosine = glm::dot(r.dir, rec.normal) / r.dir.length();
+		cosine = glm::sqrt(1 - _refIdx * _refIdx * (1 - cosine * cosine));
+		//cosine = _refIdx * glm::dot(r.dir, rec.normal) / r.dir.length();
 	} else {
 		outwardNormal = rec.normal;
 		niOverNt = 1.0 / _refIdx;

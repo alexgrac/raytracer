@@ -7,6 +7,7 @@
 
 namespace rtrax {
 
+	glm::vec3 randomInUnitDisk();
 	glm::vec3 randomInUnitSphere();
 	float rand01();
 
